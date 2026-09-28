@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-forest: #0d4a34;
+  --color-forest-deep: #083226;
+  --color-gold: #8d6824;
+  --color-sand: #f3e6c4;
+  --color-cream: #f6f1e6;
+  --color-paper: #fffcf7;
+  --color-ink: #1a2420;
+  --color-muted: #4e5c55;
+  --font-sans: var(--font-source);
+  --font-serif: var(--font-libre);
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-source), "Segoe UI", sans-serif;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
