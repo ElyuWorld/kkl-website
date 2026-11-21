@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
+import { ChecklistPreview } from "@/components/ChecklistPreview";
 import { PageHeader } from "@/components/PageHeader";
 import { forms } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Requirement forms",
   description:
-    "Download KKL membership, share capital, and loan requirement forms.",
+    "Download KKL membership, deposit, loan, and re-subscription forms.",
 };
 
 export default function FormsPage() {
   return (
     <>
-      <PageHeader eyebrow="Downloads" title="Requirement forms">
+      <PageHeader
+        eyebrow="Downloads"
+        title="Requirement forms"
+        action={<ChecklistPreview />}
+      >
         Print the form, fill it in, and submit it at the Lagonoy office or the
         Caramoan branch. Share capital amounts and loan approval follow the
         current policies of the board.
@@ -31,10 +36,13 @@ export default function FormsPage() {
                 <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
                   {form.summary}
                 </p>
+                {"note" in form && form.note ? (
+                  <p className="mt-1 text-sm leading-relaxed text-muted">{form.note}</p>
+                ) : null}
                 <p className="mt-2 text-xs text-muted">PDF · {form.file}</p>
               </div>
               <a
-                href={`/forms/${form.file}`}
+                href={`/forms/${encodeURIComponent(form.file)}`}
                 download={form.file}
                 className="inline-flex shrink-0 items-center justify-center rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-sand"
               >
@@ -44,10 +52,9 @@ export default function FormsPage() {
           ))}
         </ol>
         <p className="mt-8 max-w-3xl text-sm leading-relaxed text-muted">
-          Start with the membership requirements checklist, then complete the
-          application and the share capital subscription. Members preparing a
-          loan should use the loan requirements sheet. The office may ask for
-          another document under the by-laws.
+          Download the form you need, print it, and bring it to the Lagonoy
+          office or the Caramoan branch. The office may ask for another
+          document under the by-laws.
         </p>
       </div>
     </>

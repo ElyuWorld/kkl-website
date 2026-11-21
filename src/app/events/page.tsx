@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/PageHeader";
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Program of the KKL 38th Founding Anniversary and 5th KKLympics fellowship night.",
+    "Cooperative Month 2026, October 1–31, and the program of the KKL 38th Founding Anniversary and 5th KKLympics fellowship night.",
 };
 
 const program = [
@@ -50,18 +50,37 @@ const games = [
 export default function EventsPage() {
   return (
     <>
-      <PageHeader eyebrow="Events" title="38th Founding Anniversary and KKLympics">
-        The fellowship night was held on August 29, 2026, at 7:00 p.m. at the
-        KKL Function Hall. Dir. Roweno M. Alvaran, vice-chairman of the board,
-        was guest of honor.
+      <PageHeader eyebrow="Events" title="KKL Program and Events">
+        Cooperative Month runs October 1–31, 2026. The 38th founding
+        anniversary fellowship night was held on August 29, 2026, at 7:00 p.m.
+        at the KKL Function Hall. Dir. Roweno M. Alvaran, vice-chairman of the
+        board, was guest of honor.
       </PageHeader>
       <div className="mx-auto max-w-6xl px-5 py-12">
+        <section>
+          <h2 className="font-serif text-3xl text-forest">Cooperative Month 2026</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+            October 1–31, 2026. Theme: Matibay na Kooperatiba: Nagkakaisang
+            Pamayanan para sa Kapayapaan at Kaunlaran.
+          </p>
+          <Image
+            src="/images/coop-month.jpg"
+            alt="Cooperative Month 2026 poster, October 1 to 31"
+            width={1024}
+            height={723}
+            className="mt-6 h-auto w-full rounded-2xl bg-paper"
+          />
+        </section>
+
+        <h2 className="mt-12 font-serif text-3xl text-forest">
+          38th Founding Anniversary and KKLympics
+        </h2>
         <Image
           src="/images/program.png"
           alt="Printed program of the 38th Founding Anniversary and 5th KKLympics"
           width={6250}
           height={4419}
-          className="h-auto w-full rounded-2xl bg-paper"
+          className="mt-6 h-auto w-full rounded-2xl bg-paper"
         />
 
         <div className="mt-10 grid gap-4 md:grid-cols-2">

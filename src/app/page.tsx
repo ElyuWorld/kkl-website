@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PhotoSwap } from "@/components/PhotoSwap";
 import { coop, forms } from "@/lib/site";
 
 const services = [
@@ -57,13 +58,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <Image
-            src="/images/anniversary.png"
-            alt="Banner for the KKL 38th Founding Anniversary"
-            width={3750}
-            height={1969}
-            className="h-auto w-full rounded-2xl"
-          />
+          <PhotoSwap />
         </div>
       </section>
 

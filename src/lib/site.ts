@@ -19,27 +19,29 @@ export const nav = [
 
 export const forms = [
   {
-    file: "membership-requirements.pdf",
-    title: "Membership Requirements",
-    summary:
-      "Checklist of documents to prepare before you apply for membership.",
+    file: "MEMBERSHIP FORM.pdf",
+    title: "Membership Form",
+    summary: "Application for new members. Print it and submit it at the office.",
   },
   {
-    file: "membership-application.pdf",
-    title: "Membership Application",
-    summary:
-      "Application sheet for new members, including personal information and a declaration.",
+    file: "Member Profile Information.pdf",
+    title: "Member Profile Information",
+    summary: "Member details to file with the cooperative.",
   },
   {
-    file: "share-capital-subscription.pdf",
-    title: "Share Capital Subscription",
-    summary:
-      "Form for subscribing share capital. The amount follows the current board resolution.",
+    file: "Deposit Application Form.pdf",
+    title: "Deposit Application Form",
+    summary: "Form for a deposit application.",
   },
   {
-    file: "loan-requirements.pdf",
-    title: "Loan Requirements",
-    summary:
-      "Checklist and cover sheet for members preparing a loan application.",
+    file: "LOAN APPLICATION FORM.pdf",
+    title: "Loan Application Form",
+    summary: "Official loan application. Fill it out by hand and submit it at the office.",
+    note: "Back to back copies (5 copies).",
+  },
+  {
+    file: "RE-SUBSCRIPTION AGREEMENT.pdf",
+    title: "Re-subscription Agreement",
+    summary: "Agreement for renewing a share capital subscription.",
   },
 ];

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Share capital",
-    text: "Membership is tied to share capital. The first members started with small salary deductions. Today, the amount to subscribe is the amount set by the Board of Directors. Use the Share Capital Subscription form when you are ready to file.",
+    text: "Membership is tied to share capital. The first members started with small salary deductions. Today, the amount to subscribe is the amount set by the Board of Directors. Use the Re-subscription Agreement when you are ready to file.",
   },
   {
     title: "Savings",
@@ -19,7 +19,7 @@ const services = [
   },
   {
     title: "Credit assistance",
-    text: "KKL extends credit to members in good standing. A loan is not automatic: the office checks membership records, income, and the current credit policy. Download the Loan Requirements sheet before you visit.",
+    text: "KKL extends credit to members in good standing. A loan is not automatic: the office checks membership records, income, and the current credit policy. Download the Loan Application Form before you visit.",
   },
   {
     title: "Consumer store",
