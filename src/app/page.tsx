@@ -3,6 +3,18 @@ import Link from "next/link";
 import { PhotoSwap } from "@/components/PhotoSwap";
 import { coop, forms } from "@/lib/site";
 
+const newMemberFiles = new Set([
+  "MEMBERSHIP FORM.pdf",
+  "Member Profile Information.pdf",
+]);
+const newMemberForms = forms.filter((form) => newMemberFiles.has(form.file));
+const otherForms = forms.filter((form) => !newMemberFiles.has(form.file));
+
+const formGroups = [
+  { title: "New members", items: newMemberForms },
+  { title: "Deposit, loan, and re-subscription", items: otherForms },
+];
+
 const services = [
   {
     title: "Share capital and savings",
@@ -95,22 +107,43 @@ export default function Home() {
 
       <section className="mx-auto max-w-6xl px-5 py-12">
         <div className="rounded-3xl bg-forest px-6 py-8 text-sand md:px-10">
-          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-sand/75">
-            Requirement forms
-          </p>
-          <h2 className="mt-2 font-serif text-3xl text-white">
-            Download, print, and bring them to the office
+          <h2 className="font-serif text-3xl text-balance text-white">
+            Download, print, and bring a valid ID
           </h2>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-            {forms.map((form) => (
-              <li key={form.file} className="text-sm text-sand/90">
-                {form.title}
-              </li>
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-sand/90">
+            Take the form to F. Pamor St. or the Caramoan branch.
+          </p>
+          <div className="mt-6 grid gap-x-10 gap-y-8 md:grid-cols-2">
+            {formGroups.map((group) => (
+              <div key={group.title} className="min-w-0">
+                <h3 className="font-serif text-xl text-white">{group.title}</h3>
+                <ul className="mt-3 grid gap-4">
+                  {group.items.map((form) => (
+                    <li key={form.file}>
+                      <a
+                        href={`/forms/${encodeURIComponent(form.file)}`}
+                        download={form.file}
+                        className="inline-block text-sm font-semibold text-white underline decoration-sand/70 underline-offset-4 hover:decoration-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sand"
+                      >
+                        {form.title}
+                      </a>
+                      <p className="mt-2 text-sm leading-relaxed text-sand/90">
+                        {form.summary}
+                      </p>
+                      {"note" in form && form.note ? (
+                        <p className="mt-1 text-sm leading-relaxed text-sand/90">
+                          {form.note}
+                        </p>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
           <Link
             href="/forms"
-            className="mt-6 inline-block rounded-full bg-sand px-5 py-2.5 text-sm font-semibold text-forest-deep"
+            className="mt-6 inline-block rounded-full bg-sand px-5 py-2.5 text-sm font-semibold text-forest-deep focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             Open the forms section
           </Link>
